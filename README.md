@@ -157,7 +157,7 @@ summary(iris)
  ```
  
 #### C. Let's plot our data to see the relation between these features using the `ggplot()` function 
-  - First we could check the relation between Sepal length and Speal width 
+  - First we can check the relation between Sepal length and Sepal width 
   - we use `theme_minimal()` here to adjust the appearance of the plots 
   
  ```r
@@ -166,9 +166,9 @@ summary(iris)
     theme_minimal()
  ```
  
-  - we could add title, change the xy axis labels by adding `ggtitle("your title here")`, `xlab("label for x axis)` & `ylab("label for y axis)`.
+  - we can also add a title and change the xy axis labels by adding `ggtitle("your title here")`, `xlab("label for x axis")` & `ylab("label for y axis")`.
 
-#### D. Now we would like to see this relation by each species. To do this we can pass a additional aesthetic to our ggplot, which marked the species by different colors
+#### D. Now we would like to see this relation by each species. To do this we can pass a additional aesthetic to our ggplot, which marks the species by different colors
 
 ```r
 ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) + 
@@ -176,7 +176,7 @@ ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) +
     theme_minimal() 
 ```
 
-#### E.  On top of this scatter plot, we could add a trend line to visualize the general trend we could do so by adding `geom_smooth()`
+#### E.  On top of this scatter plot, we can add a trend line to visualize the general trend. We do this by adding `geom_smooth()`
   - passing argument `se=False` turns off confidence intervals
   
 ```r
@@ -210,7 +210,7 @@ ggplot(data=iris,aes(x=Species, y=Petal.Length, color=Species)) +
 
   - We can understand the feature (here Petal.Length) easily by looking at the boxplot. The thick black line represents median, the edges of box represent 25th and 75th quantiles. The dot represents outliers.
 
-#### H. You can plot frequency using a histogram
+#### H. You can plot frequency using a histogram.
 
 ```r
 ggplot(data=iris,aes(x=Sepal.Length, fill=Species)) + 
