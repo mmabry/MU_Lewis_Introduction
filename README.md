@@ -162,12 +162,69 @@ summary(iris)
     theme_minimal()
  ```
  
-#### we could add title, change the xy axis labels by adding `ggtitle("your title here")`, `xlab("label for x axis)` & `ylab("label for y axis)`.
+  - we could add title, change the xy axis labels by adding `ggtitle("your title here")`, `xlab("label for x axis)` & `ylab("label for y axis)`.
 
 #### D. Now we would like to see this relation by each species. To do this we can pass a additional aesthetic to our ggplot, which marked the species by different colors
 
 ```r
-ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length,color=Species)) + 
+ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) + 
     geom_point() + 
     theme_minimal() 
 ```
+
+#### E.  On top of this scatter plot, we could add a trend line to visualize the general trend we could do so by adding `geom_smooth()`
+  - passing argument `se=False` turns off confidence intervals
+  
+```r
+ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) + 
+    geom_point() +
+    geom_smooth(se=FALSE) +
+    theme_minimal()
+```
+
+#### F. We can also divide the plot into multiple plots, one for each species by adding `facet_wrap()`
+
+```r
+ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) +
+    geom_point() + 
+    geom_smooth(se=FALSE) +
+    facet_wrap(~Species) +
+    theme_minimal()
+```
+  - try saving image in your home working directory.
+  
+#### G. Let's look at boxplots!
+
+```r
+ggplot(data=iris,aes(x=Species, y=Petal.Length, color=Species)) + 
+    geom_boxplot() +
+    theme_minimal()+
+    theme(legend.position="none")
+```
+
+  - We can understand the feature (here Petal.Length) easily by looking at the boxplot. The thick black line represents median, the edges of box represent 25th and 75th quantiles. The dot represents outliers.
+
+#### H. You can plot frequency using a histogram
+
+```r
+ggplot(data=iris,aes(x=Sepal.Length, fill=Species)) + 
+    geom_histogram() +
+    theme_minimal()
+```
+
+#### I. We can again split the plots like we did with the scatterplot with `facet_wrap()`
+
+```r
+ggplot(data=iris,aes(x=Sepal.Length, fill=Species)) + 
+    geom_histogram() +
+    theme_minimal() +
+    facet_wrap(~Species)
+```
+
+# 5. Keep learning!
+  - Swirl `http://swirlstats.com/`
+  - Codecademy `http://www.codecademy.com/`
+  - Coursera `https://www.coursera.org/`
+  - Kahn Academy `https://www.khanacademy.org/`
+  - Code School `https://www.codeschool.com/`
+  - Python `https://learnpythonthehardway.org/`
