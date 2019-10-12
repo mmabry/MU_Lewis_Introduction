@@ -97,6 +97,10 @@ http://docs.rnet.missouri.edu/Software/r-studio
   - Windows 10 - MobaXterm will provide X11 support by default
 
 ```bash
+ssh -YC <username>@lewis.rnet.missouri.edu
+```
+
+```bash
 srun -p Interactive --mem 4G --pty /bin/bash
 module load rstudio/rstudio-desktop-1.1.456
 rstudio
@@ -113,7 +117,7 @@ library(tidyverse)
 
 #### Modified  from : https://www.kaggle.com/leolcling/visualizing-iris-datasets-with-r-ggplot2
 
-#### A. load the iris dataset that is already loaded in R. we can use the `head()` command to look at the first five columns
+#### A. load the iris dataset that is already located in R. we can use the `head()` command to look at the first five columns
 
 ```r
 data("iris")
@@ -176,12 +180,14 @@ ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) +
   - passing argument `se=False` turns off confidence intervals
   
 ```r
-ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) + 
+ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Speceis)) + 
     geom_point() +
     geom_smooth(se=FALSE) +
     theme_minimal()
 ```
 
+  - is there something wrong with your code? What do you think is wrong?
+  
 #### F. We can also divide the plot into multiple plots, one for each species by adding `facet_wrap()`
 
 ```r
@@ -222,9 +228,9 @@ ggplot(data=iris,aes(x=Sepal.Length, fill=Species)) +
 ```
 
 # 5. Keep learning!
-  - Swirl `http://swirlstats.com/`
-  - Codecademy `http://www.codecademy.com/`
-  - Coursera `https://www.coursera.org/`
-  - Kahn Academy `https://www.khanacademy.org/`
-  - Code School `https://www.codeschool.com/`
-  - Python `https://learnpythonthehardway.org/`
+  - Swirl https://swirlstats.com/
+  - Codecademy http://www.codecademy.com/
+  - Coursera https://www.coursera.org/
+  - Kahn Academy https://www.khanacademy.org/
+  - Code School https://www.codeschool.com/
+  - Python https://learnpythonthehardway.org/
