@@ -40,7 +40,7 @@ http://docs.rnet.missouri.edu/Linux/basic-commands
 
 `mv`	Used to move files
 
-`rm`	Used to remove files
+`rm -i`	Used to remove files
 
 `mkdir`	Used to make new directories
 
