@@ -117,7 +117,7 @@ library(tidyverse)
 
 #### Modified  from : https://www.kaggle.com/leolcling/visualizing-iris-datasets-with-r-ggplot2
 
-#### A. load the iris dataset that is already located in R. we can use the `head()` command to look at the first five columns
+#### A. load the iris dataset that is already located in R. We can use the `head()` command to look at the first five columns.
 
 ```r
 data("iris")
@@ -135,7 +135,7 @@ head(iris)
 6          5.4         3.9          1.7         0.4  setosa
 ```
 
-#### B. Using `summary()` we can check the statistic summary of our iris data
+#### B. Using `summary()` we can check the statistic summary of our iris data.
 
 ```r
 summary(iris)
@@ -156,7 +156,7 @@ summary(iris)
  virginica :50
  ```
  
-#### C. Let's plot our data to see the relation between these features using the `ggplot()` function 
+#### C. Let's plot our data to see the relation between these features using the `ggplot()` function.
   - First we can check the relation between Sepal length and Sepal width 
   - we use `theme_minimal()` here to adjust the appearance of the plots 
   
@@ -168,7 +168,7 @@ summary(iris)
  
   - we can also add a title and change the xy axis labels by adding `ggtitle("your title here")`, `xlab("label for x axis")` & `ylab("label for y axis")`.
 
-#### D. Now we would like to see this relation by each species. To do this we can pass a additional aesthetic to our ggplot, which marks the species by different colors
+#### D. Now we would like to see this relation by each species. To do this we can pass a additional aesthetic to our ggplot, which marks the species by different colors.
 
 ```r
 ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) + 
@@ -176,7 +176,7 @@ ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) +
     theme_minimal() 
 ```
 
-#### E.  On top of this scatter plot, we can add a trend line to visualize the general trend. We do this by adding `geom_smooth()`
+#### E.  On top of this scatter plot, we can add a trend line to visualize the general trend. We do this by adding `geom_smooth()`.
   - passing argument `se=False` turns off confidence intervals
   
 ```r
@@ -188,7 +188,7 @@ ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Speceis)) +
 
   - is there something wrong with your code? What do you think is wrong?
   
-#### F. We can also divide the plot into multiple plots, one for each species by adding `facet_wrap()`
+#### F. We can also divide the plot into multiple plots, one for each species by adding `facet_wrap()`.
 
 ```r
 ggplot(data=iris,aes(x=Sepal.Width, y=Sepal.Length, color=Species)) +
@@ -218,7 +218,7 @@ ggplot(data=iris,aes(x=Sepal.Length, fill=Species)) +
     theme_minimal()
 ```
 
-#### I. We can again split the plots like we did with the scatterplot with `facet_wrap()`
+#### I. We can again split the plots like we did with the scatterplot with `facet_wrap()`.
 
 ```r
 ggplot(data=iris,aes(x=Sepal.Length, fill=Species)) + 
